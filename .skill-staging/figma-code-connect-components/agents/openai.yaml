@@ -1,0 +1,4 @@
+interface:
+  display_name: "Figma Code Connect"
+  short_description: "Map Figma components to code components"
+  default_prompt: "Use $figma-code-connect-components to map these Figma components to our codebase and save the approved Code Connect mappings."

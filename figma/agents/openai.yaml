@@ -1,0 +1,8 @@
+interface:
+  display_name: "Figma"
+  short_description: "Design-to-code + Figma automation workflows"
+  brand_color: "#0ACF83"
+  default_prompt: "Use $figma to implement a Figma node in code and/or apply the needed edits in the Figma file."
+
+policy:
+  allow_implicit_invocation: true

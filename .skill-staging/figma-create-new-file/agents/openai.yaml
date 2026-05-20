@@ -1,0 +1,8 @@
+interface:
+  display_name: "Figma New File"
+  short_description: "Create fresh Figma or FigJam files"
+  brand_color: "#0ACF83"
+  default_prompt: "Use $figma-create-new-file to create a new blank Figma file or FigJam board for this task."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,8 @@
+interface:
+  display_name: "Figma Rules"
+  short_description: "Generate repo-specific Figma design system rules"
+  brand_color: "#0ACF83"
+  default_prompt: "Use $figma-create-design-system-rules to generate design system rules for this repo from the codebase's real UI patterns."
+
+policy:
+  allow_implicit_invocation: true

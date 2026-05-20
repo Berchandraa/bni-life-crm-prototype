@@ -1,0 +1,327 @@
+:root {
+  --bg-system: #f9f9f9;
+  --surface: #ffffff;
+  --text-primary: #0a0a0a;
+  --text-muted: #666d80;
+  --text-subtle: #b4b8c5;
+  --border-soft: #ededf1;
+  --brand: #2b7fff;
+  --shadow-sm: 0 1px 2px rgba(10, 13, 18, 0.05);
+  --shadow-md: 0 5px 10px -2px rgba(13, 13, 18, 0.04), 0 4px 8px -1px rgba(13, 13, 18, 0.02);
+  --radius-md: 6px;
+  --radius-full: 999px;
+  --phone-width: 375px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(43, 127, 255, 0.08), transparent 26%),
+    #eef2f7;
+  color: var(--text-primary);
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 24px;
+}
+
+.phone-frame {
+  background: var(--bg-system);
+  display: flex;
+  flex-direction: column;
+  height: min(812px, 100dvh);
+  overflow: hidden;
+  position: relative;
+  width: min(var(--phone-width), 100vw);
+}
+
+.top-shell {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.status-bar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 21px 8px;
+}
+
+.status-time {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.28px;
+  line-height: 1.55;
+}
+
+.status-icons {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.status-icon {
+  color: var(--text-primary);
+  display: block;
+  height: 12px;
+  width: 18px;
+}
+
+.status-icon--wifi {
+  width: 16px;
+}
+
+.status-icon--battery {
+  height: 14px;
+  width: 28px;
+}
+
+.page-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.page-header h1 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.header-action {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
+.calendar-screen {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 18px;
+  padding: 30px 24px 0;
+}
+
+.calendar-heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-heading h2 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.month-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.month-button {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  color: var(--text-subtle);
+  cursor: pointer;
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  transition: transform 150ms ease, color 150ms ease, box-shadow 150ms ease;
+  width: 28px;
+}
+
+.month-button:hover,
+.month-button:focus-visible {
+  box-shadow: 0 8px 20px -8px rgba(13, 13, 18, 0.18);
+  color: var(--text-primary);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.month-button svg {
+  height: 18px;
+  width: 18px;
+}
+
+.calendar-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.weekday-row,
+.first-week-grid {
+  column-gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekday-row {
+  margin-bottom: 8px;
+}
+
+.weekday-row span {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.first-week-grid {
+  min-height: 28px;
+}
+
+.day-cell {
+  align-items: flex-start;
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  height: 28px;
+  justify-content: flex-start;
+  letter-spacing: -0.32px;
+  line-height: 1.6;
+}
+
+.day-cell--muted {
+  color: var(--text-subtle);
+}
+
+.calendar-void {
+  flex: 1;
+}
+
+.bottom-nav {
+  background: var(--surface);
+  border-top: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-top: 8px;
+  position: relative;
+}
+
+.nav-item {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  min-height: 64px;
+  padding: 0;
+}
+
+.nav-item svg {
+  height: 24px;
+  width: 24px;
+}
+
+.nav-item span {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+  line-height: 1.55;
+}
+
+.nav-item--active {
+  color: var(--brand);
+}
+
+.nav-item--spotlight {
+  justify-content: flex-end;
+  padding-bottom: 22px;
+}
+
+.nav-item--spotlight span {
+  line-height: 0;
+}
+
+.plus-button {
+  align-items: center;
+  background: var(--brand);
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(0, 170, 91, 0.15);
+  color: var(--surface);
+  display: inline-flex;
+  height: 52px;
+  justify-content: center;
+  width: 52px;
+}
+
+.plus-button svg {
+  height: 24px;
+  width: 24px;
+}
+
+.home-indicator {
+  background: var(--surface);
+  grid-column: 1 / -1;
+  height: 34px;
+  position: relative;
+}
+
+.home-indicator::before {
+  background: var(--text-primary);
+  border-radius: 100px;
+  content: "";
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  top: 11px;
+  transform: translateX(-50%);
+  width: 136px;
+}
+
+@media (min-width: 430px) {
+  .phone-frame {
+    border-radius: 32px;
+    box-shadow: 0 30px 80px rgba(10, 16, 28, 0.18);
+  }
+}
+
+@media (max-width: 429px) {
+  .app-shell {
+    padding: 0;
+  }
+
+  .phone-frame {
+    width: 100vw;
+  }
+}

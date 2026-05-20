@@ -1,0 +1,8 @@
+interface:
+  display_name: "Figma Generate Library"
+  short_description: "Build or sync reusable Figma libraries"
+  brand_color: "#0ACF83"
+  default_prompt: "Use $figma-generate-library to create or update a reusable Figma component library for this product."
+
+policy:
+  allow_implicit_invocation: true

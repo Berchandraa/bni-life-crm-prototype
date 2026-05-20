@@ -1,0 +1,7 @@
+interface:
+  display_name: "Figma Generate Design"
+  short_description: "Capture webpages into Figma files"
+  default_prompt: "Use $figma-generate-design to capture a webpage or local app screen into a new or existing Figma file."
+
+policy:
+  allow_implicit_invocation: true

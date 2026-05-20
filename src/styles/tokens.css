@@ -1,0 +1,37 @@
+:root {
+  --color-brand-bone: #faf8f5;
+  --color-brand-black: #151515;
+  --color-brand-mist-green: #8b9d83;
+  --color-brand-taupe: #9c8f84;
+  --color-brand-terracotta: #a34c32;
+  --color-brand-dessert-sand: #dec8b3;
+
+  --color-background: var(--color-brand-bone);
+  --color-surface: #ffffff;
+  --color-surface-soft: var(--color-brand-dessert-sand);
+  --color-surface-overlay: rgba(21, 21, 21, 0.52);
+  --color-surface-strong: var(--color-brand-black);
+
+  --color-text-primary: var(--color-brand-black);
+  --color-text-secondary: var(--color-brand-taupe);
+  --color-text-muted: #b7aea7;
+  --color-text-inverse: var(--color-brand-bone);
+  --color-text-accent: var(--color-brand-terracotta);
+  --color-text-success: var(--color-brand-mist-green);
+
+  --color-border-primary: var(--color-brand-taupe);
+  --color-border-soft: #d8cdc3;
+  --color-border-strong: var(--color-brand-black);
+  --color-border-accent: var(--color-brand-terracotta);
+  --color-border-success: var(--color-brand-mist-green);
+
+  --color-accent-primary: var(--color-brand-terracotta);
+  --color-accent-primary-hover: #8a3f29;
+  --color-accent-soft: var(--color-brand-dessert-sand);
+  --color-accent-success: var(--color-brand-mist-green);
+  --color-accent-success-soft: #e4ebe1;
+
+  --shadow-sm: 0 8px 24px rgba(156, 143, 132, 0.12);
+  --shadow-md: 0 14px 34px rgba(21, 21, 21, 0.08);
+  --shadow-lg: 0 24px 60px rgba(21, 21, 21, 0.12);
+}

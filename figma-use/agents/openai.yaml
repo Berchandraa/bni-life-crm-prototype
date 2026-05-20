@@ -1,0 +1,7 @@
+interface:
+  display_name: "Figma Use"
+  short_description: "Direct Figma file edits via Plugin API"
+  default_prompt: "Use $figma-use to make targeted edits inside an existing Figma file."
+
+policy:
+  allow_implicit_invocation: true
