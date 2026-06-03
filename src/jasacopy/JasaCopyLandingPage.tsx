@@ -1,4 +1,4 @@
-import { useEffect, type CSSProperties, type FormEvent } from "react";
+import { useEffect, useState, type CSSProperties, type FormEvent } from "react";
 import { LightRays } from "./LightRays";
 import "./jasacopy.css";
 
@@ -89,6 +89,8 @@ const processSteps = [
 ];
 
 export function JasaCopyLandingPage() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -180,7 +182,7 @@ export function JasaCopyLandingPage() {
 
   return (
     <div className="jasacopy-shell">
-      <header className="jc-header">
+      <header className={`jc-header${isMobileMenuOpen ? " is-mobile-open" : ""}`}>
         <a className="jc-logo" href="#home" aria-label="Berlabs home">
           <img className="jc-logo-icon" src="/berlabs-mark-white.svg" alt="" aria-hidden="true" />
         </a>
@@ -223,6 +225,66 @@ export function JasaCopyLandingPage() {
             />
           </svg>
         </a>
+        <button
+          className="jc-mobile-toggle"
+          type="button"
+          aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMobileMenuOpen((current) => !current)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <div className="jc-mobile-menu" id="mobile-navigation" aria-hidden={!isMobileMenuOpen}>
+          <nav aria-label="Mobile navigation">
+            <a href="#home" onClick={() => setIsMobileMenuOpen(false)}>
+              Home
+            </a>
+            <a href="#services" onClick={() => setIsMobileMenuOpen(false)}>
+              Services
+            </a>
+            <a href="#workflow" onClick={() => setIsMobileMenuOpen(false)}>
+              Workflow
+            </a>
+          </nav>
+          <a
+            className="jc-header-cta jc-mobile-cta"
+            href="https://wa.me/6281283247741?text=Halo%20Berlabs%2C%20saya%20ingin%20diskusi%20project."
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <span className="jc-header-cta-label">Start Projects</span>
+            <svg
+              className="jc-header-cta-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M12.0249 4.94166L17.0832 10L12.0249 15.0583"
+                stroke="currentColor"
+                strokeWidth="1.25"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M2.91675 10H16.9417"
+                stroke="currentColor"
+                strokeWidth="1.25"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
       </header>
 
       <main id="home">
