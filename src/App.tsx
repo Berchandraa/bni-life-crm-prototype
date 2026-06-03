@@ -1,7 +1,7 @@
-import { CrmPrototypeApp } from "./crm-prototype/app/CrmPrototypeApp";
+import { JasaCopyLandingPage } from "./jasacopy/JasaCopyLandingPage";
 
 function App() {
-  return <CrmPrototypeApp />;
+  return <JasaCopyLandingPage />;
 }
 
 export default App;

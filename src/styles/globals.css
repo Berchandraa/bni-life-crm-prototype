@@ -27,7 +27,7 @@ body {
     radial-gradient(circle at top, rgba(222, 200, 179, 0.42), transparent 36%),
     var(--color-background);
   color: var(--color-text-primary);
-  font-family: inherit;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   font-size: 14px;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
