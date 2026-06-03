@@ -1,5 +1,4 @@
 import { useEffect, useState, type CSSProperties, type FormEvent } from "react";
-import { LightRays } from "./LightRays";
 import "./jasacopy.css";
 
 const techIcons = [
@@ -290,9 +289,9 @@ export function JasaCopyLandingPage() {
       <main id="home">
         <section className="jc-hero">
           <div className="jc-hero-highlight" aria-hidden="true" />
-          <LightRays className="jc-light-rays" density={10} speed={0.18} />
-          <img className="jc-hero-vector jc-hero-vector-left" src="/figma-hero/vector-62.png" alt="" aria-hidden="true" />
-          <img className="jc-hero-vector jc-hero-vector-right" src="/figma-hero/vector-61.png" alt="" aria-hidden="true" />
+          <div className="jc-light-rays" aria-hidden="true" />
+          <img className="jc-hero-vector jc-hero-vector-left" src="/figma-hero/vector-62.png" alt="" aria-hidden="true" decoding="async" />
+          <img className="jc-hero-vector jc-hero-vector-right" src="/figma-hero/vector-61.png" alt="" aria-hidden="true" decoding="async" />
           <div className="jc-hero-copy">
             <p className="jc-kicker">Available for B2B &amp; Enterprise projects</p>
             <h1>
@@ -328,7 +327,7 @@ export function JasaCopyLandingPage() {
                   } as CSSProperties
                 }
               >
-                <img src={icon.src} alt="" />
+                <img src={icon.src} alt="" decoding="async" />
               </span>
             ))}
           </div>
@@ -469,7 +468,7 @@ export function JasaCopyLandingPage() {
       <footer className="jc-footer">
         <div>
           <a className="jc-logo" href="#home" aria-label="Berlabs home">
-            <img src="/jasacopy-logo-blue.png" alt="Berlabs" />
+            <img src="/jasacopy-logo-blue.png" alt="Berlabs" loading="lazy" decoding="async" />
           </a>
           <p>
             Trusted B2B digital product design and development studio.
@@ -494,7 +493,7 @@ function CardVisual({ type }: { type: string }) {
         <div className="jc-about-content-card">
           <div className="jc-search-shell">
             <div className="jc-search-input">
-              <img src="/figma-about/search.svg" alt="" />
+              <img src="/figma-about/search.svg" alt="" loading="lazy" decoding="async" />
               <span>Cari referensi copy...</span>
               <i aria-hidden="true" />
             </div>
@@ -538,7 +537,7 @@ function CardVisual({ type }: { type: string }) {
       <div className="jc-result-card" aria-hidden="true">
         <div className="jc-result-inner">
           <div className="jc-result-brand">
-            <img src="/figma-about/brand-logo.svg" alt="" />
+            <img src="/figma-about/brand-logo.svg" alt="" loading="lazy" decoding="async" />
             <div>
               <strong>Brand Anda</strong>
               <p>website.com &gt; landing-page</p>
@@ -582,23 +581,23 @@ function ServiceVisual({ type }: { type: string }) {
   return (
     <div className={`jc-service-visual jc-service-visual-${type}`} aria-hidden="true">
       {type === "screen" && (
-        <img className="jc-service-browser" src="/figma-services/web-mockup.png" alt="" />
+        <img className="jc-service-browser" src="/figma-services/web-mockup.webp" alt="" loading="lazy" decoding="async" />
       )}
       {type === "phones" && (
-        <img className="jc-service-phones" src="/figma-services/phone-mockup.png" alt="" />
+        <img className="jc-service-phones" src="/figma-services/phone-mockup.webp" alt="" loading="lazy" decoding="async" />
       )}
       {type === "ui" && (
         <div className="jc-service-ui-scene">
           <div className="jc-service-soft-icon jc-service-soft-icon-figma">
-            <img src="/figma-services/figma.svg" alt="" />
+            <img src="/figma-services/figma.svg" alt="" loading="lazy" decoding="async" />
           </div>
           <div className="jc-service-soft-icon jc-service-soft-icon-miro">
-            <img src="/figma-services/miro.svg" alt="" />
+            <img src="/figma-services/miro.svg" alt="" loading="lazy" decoding="async" />
           </div>
           <span className="jc-service-pill jc-service-pill-pink">Web Copy</span>
           <span className="jc-service-pill jc-service-pill-blue">Ad Copy</span>
-          <img className="jc-service-cursor jc-service-cursor-one" src="/figma-services/cursor.svg" alt="" />
-          <img className="jc-service-cursor jc-service-cursor-two" src="/figma-services/cursor.svg" alt="" />
+          <img className="jc-service-cursor jc-service-cursor-one" src="/figma-services/cursor.svg" alt="" loading="lazy" decoding="async" />
+          <img className="jc-service-cursor jc-service-cursor-two" src="/figma-services/cursor.svg" alt="" loading="lazy" decoding="async" />
           <div className="jc-service-rating">
             <p>
               <span>Trust</span>
@@ -628,13 +627,13 @@ function ServiceVisual({ type }: { type: string }) {
         <div className="jc-service-network">
           <span className="jc-service-status" />
           <div className="jc-service-db">
-            <img src="/figma-services/database.svg" alt="" />
+            <img src="/figma-services/database.svg" alt="" loading="lazy" decoding="async" />
           </div>
           <div className="jc-service-node jc-service-node-code">
-            <img src="/figma-services/code.svg" alt="" />
+            <img src="/figma-services/code.svg" alt="" loading="lazy" decoding="async" />
           </div>
           <div className="jc-service-node jc-service-node-github">
-            <img src="/figma-services/github.svg" alt="" />
+            <img src="/figma-services/github.svg" alt="" loading="lazy" decoding="async" />
           </div>
           <span className="jc-service-node jc-service-node-cta">API</span>
           <i className="jc-service-line jc-service-line-one" />
