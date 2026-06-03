@@ -184,6 +184,7 @@ export function JasaCopyLandingPage() {
       <header className={`jc-header${isMobileMenuOpen ? " is-mobile-open" : ""}`}>
         <a className="jc-logo" href="#home" aria-label="Berlabs home">
           <img className="jc-logo-icon" src="/berlabs-mark-white.svg" alt="" aria-hidden="true" />
+          <span className="jc-logo-text">Berlabs</span>
         </a>
         <nav className="jc-nav" aria-label="Main navigation">
           <a href="#home">Home</a>

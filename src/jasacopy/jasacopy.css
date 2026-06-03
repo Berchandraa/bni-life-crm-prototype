@@ -122,14 +122,25 @@ html {
   flex: 0 0 129px;
   width: 129px;
   height: 36px;
+  gap: 10px;
   justify-content: flex-start;
 }
 
 .jc-header .jc-logo-icon {
-  flex: 0 0 42px;
-  width: 42px;
-  height: 42px;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
+}
+
+.jc-header .jc-logo-text {
+  color: #ffffff;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.16px;
+  white-space: nowrap;
 }
 
 .jc-nav {
