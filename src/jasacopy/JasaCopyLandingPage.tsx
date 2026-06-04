@@ -89,6 +89,7 @@ const processSteps = [
 
 export function JasaCopyLandingPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [descriptionLength, setDescriptionLength] = useState(0);
 
   const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -183,8 +184,7 @@ export function JasaCopyLandingPage() {
     <div className="jasacopy-shell">
       <header className={`jc-header${isMobileMenuOpen ? " is-mobile-open" : ""}`}>
         <a className="jc-logo" href="#home" aria-label="Berlabs home">
-          <img className="jc-logo-icon" src="/berlabs-mark-white.svg" alt="" aria-hidden="true" />
-          <span className="jc-logo-text">Berlabs</span>
+          <img src="/berlabs-logo-default.svg" alt="Berlabs" />
         </a>
         <nav className="jc-nav" aria-label="Main navigation">
           <a href="#home">Home</a>
@@ -412,56 +412,52 @@ export function JasaCopyLandingPage() {
         </section>
 
         <section className="jc-contact jc-scroll-reveal" id="contact">
-          <div className="jc-contact-hero jc-reveal-item" style={{ "--reveal-delay": "0ms" } as CSSProperties}>
-            <h2>Ready to take your digital product to the next level?</h2>
-            <span>
-              Partner with our experts to engineer scalable platforms and stunning user experiences today.
-            </span>
-            <a className="jc-button jc-button-primary jc-contact-hero-button" href="#contact-form">
-              Start your Projects
-              <span aria-hidden="true">-&gt;</span>
-            </a>
-          </div>
-          <div className="jc-contact-panel jc-reveal-item" id="contact-form" style={{ "--reveal-delay": "150ms" } as CSSProperties}>
-            <aside>
-              <h3>Not sure where to start?</h3>
+          <div className="jc-contact-inner">
+            <div className="jc-contact-heading jc-reveal-item" style={{ "--reveal-delay": "0ms" } as CSSProperties}>
+              <h2>Ready to take your digital product to the next level?</h2>
               <p>
-                Berlabs helps brands turn business goals into fast websites, conversion-focused landing pages, and scalable digital products. Tell us your business context, product goals, and timeline so we can map the right direction.
+                Partner with our experts to engineer scalable platforms and stunning user experiences today.
               </p>
-              <div>
-                <span>Product strategy</span>
-                <span>UI/UX design</span>
-                <span>Web development</span>
-              </div>
-            </aside>
+            </div>
+          <div className="jc-contact-panel jc-reveal-item" id="contact-form" style={{ "--reveal-delay": "150ms" } as CSSProperties}>
             <form className="jc-contact-form" onSubmit={handleContactSubmit}>
               <label>
-                <span>Nama *</span>
-                <input type="text" name="name" placeholder="Your name here" autoComplete="name" required />
+                <span>Your Name</span>
+                <input type="text" name="name" autoComplete="name" required />
               </label>
               <label>
-                <span>Email *</span>
-                <input type="email" name="email" placeholder="Your email here" autoComplete="email" required />
+                <span>Email</span>
+                <input type="email" name="email" autoComplete="email" required />
               </label>
               <label>
-                <span>Nomor Telepon *</span>
-                <input type="tel" name="phone" placeholder="WhatsApp or phone number" autoComplete="tel" required />
+                <span>Phone Number</span>
+                <input type="tel" name="phone" autoComplete="tel" required />
               </label>
               <label>
-                <span>Nama Bisnis *</span>
-                <input type="text" name="business" placeholder="Your business or brand name" autoComplete="organization" required />
+                <span>Your Business or brand name</span>
+                <input type="text" name="business" autoComplete="organization" required />
               </label>
-              <label>
-                <span>Deskripsikan Kebutuhan *</span>
-                <textarea name="needs" placeholder="Tell us what you need, your target audience, target location, and ideal launch date" rows={4} required />
+              <label className="jc-contact-textarea">
+                <span>Description</span>
+                <div className="jc-textarea-box">
+                  <textarea
+                    name="needs"
+                    placeholder="Tell us what u need, your target audience, target location and ideal launch date"
+                    maxLength={200}
+                    rows={4}
+                    onChange={(event) => setDescriptionLength(event.currentTarget.value.length)}
+                    required
+                  />
+                  <small>{descriptionLength}/200</small>
+                </div>
               </label>
               <div className="jc-contact-actions">
                 <button className="jc-button jc-button-primary jc-contact-submit" type="submit">
                   Submit
-                  <span aria-hidden="true">-&gt;</span>
                 </button>
               </div>
             </form>
+          </div>
           </div>
         </section>
       </main>
